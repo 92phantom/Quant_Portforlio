@@ -124,4 +124,5 @@ KOR_ticker[str_sub(KOR_ticker[, '종목코드'], -1, -1) != 0, '종목명']
 KOR_ticker = KOR_ticker[!grepl('스팩', KOR_ticker[, '종목명']), ]  
 KOR_ticker = KOR_ticker[str_sub(KOR_ticker[, '종목코드'], -1, -1) == 0, ]
 
-
+rownames(KOR_ticker) = NULL
+write.csv(KOR_ticker, 'data/KOR_ticker.csv')
